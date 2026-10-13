@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production · System Status</title>
+  <!-- Tailwind CSS via CDN (production-ready) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- tiny additional smoothness: default config is fine, but we keep it minimal -->
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center min-h-screen m-0 font-sans text-slate-800 antialiased">
+  
+  <!-- main card – exactly as designed, but production-tailwind with link -->
+  <div class="bg-white p-10 rounded-2xl shadow-xl border border-slate-100 text-center max-w-sm w-full mx-4 transform transition-all hover:scale-[1.01]">
+    
+    <!-- Animated Status Indicator -->
+    <div class="relative flex items-center justify-center w-16 h-16 mx-auto mb-6 bg-emerald-50 rounded-full">
+      <span class="absolute inline-flex w-10 h-10 bg-emerald-400 rounded-full opacity-75 animate-ping"></span>
+      <div class="relative flex items-center justify-center w-8 h-8 bg-emerald-500 rounded-full shadow-inner">
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Heading & Message -->
+    <h1 class="text-2xl font-bold tracking-tight text-slate-900">Website Live</h1>
+    <p class="text-sm text-slate-500 mt-2 leading-relaxed">Everything all right and ready.</p>
+
+     </div>
+
+</body>
+</html>

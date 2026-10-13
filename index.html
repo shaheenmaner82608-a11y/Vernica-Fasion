@@ -1,33 +1,1285 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Production · System Status</title>
-  <!-- Tailwind CSS via CDN (production-ready) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- tiny additional smoothness: default config is fine, but we keep it minimal -->
-</head>
-<body class="bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center min-h-screen m-0 font-sans text-slate-800 antialiased">
-  
-  <!-- main card – exactly as designed, but production-tailwind with link -->
-  <div class="bg-white p-10 rounded-2xl shadow-xl border border-slate-100 text-center max-w-sm w-full mx-4 transform transition-all hover:scale-[1.01]">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vernica Fashions | Explore Stylish Fashion Collections</title>
     
-    <!-- Animated Status Indicator -->
-    <div class="relative flex items-center justify-center w-16 h-16 mx-auto mb-6 bg-emerald-50 rounded-full">
-      <span class="absolute inline-flex w-10 h-10 bg-emerald-400 rounded-full opacity-75 animate-ping"></span>
-      <div class="relative flex items-center justify-center w-8 h-8 bg-emerald-500 rounded-full shadow-inner">
-        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-        </svg>
-      </div>
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Discover Vernica Fashions, explore stylish clothing collections, view the latest fashion inspiration, and connect with us for product enquiries and ordering details.">
+    <meta name="keywords" content="Vernica Fashions, Fashion Boutique, Women Clothing, Ethnic Wear, Western Wear, Designer Dresses, Instagram Fashion">
+    
+    <!-- Canonical URL Placeholder -->
+    <link rel="canonical" href="https://www.vernicafashions.com/">
+
+    <!-- Open Graph Social Meta Tags -->
+    <meta property="og:title" content="Vernica Fashions | Explore Stylish Fashion Collections">
+    <meta property="og:description" content="Discover Vernica Fashions, explore stylish clothing collections, view the latest fashion inspiration, and connect with us on WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.instagram.com/vernica_fashions/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts: Playfair Display for Serifs & Inter for Sans-Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons for Social & UI Elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#1F1F1F',
+                        ivory: '#F7F2EE',
+                        rosebrown: '#B88972',
+                        darkgrey: '#333333',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom smooth transition and scrollbar styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            background-color: #F7F2EE;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F2EE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #B88972;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a715d;
+        }
+    </style>
+</head>
+<body class="bg-ivory text-darkgrey antialiased selection:bg-rosebrown selection:text-white">
+
+    <!-- GLOBAL CONFIGURATION VARIABLE CONTAINER FOR JAVASCRIPT -->
+    <script>
+        // CONFIGURATION: Easily update your business WhatsApp number here (without '+' sign, include country code e.g., 919876543210)
+        window.VERBICA_CONFIG = {
+            whatsappNumber: "919876543210", 
+            instagramUrl: "https://www.instagram.com/vernica_fashions/"
+        };
+    </script>
+
+
+    <!-- =========================================================
+         SECTION 1: ANNOUNCEMENT BAR
+         PURPOSE: Displays top promotional messages or updates.
+         CUSTOMIZATION: Edit the text strings in the marquee/bar below.
+    ========================================================= -->
+    <div class="bg-charcoal text-ivory text-xs sm:text-sm tracking-widest py-2.5 px-4 text-center font-medium transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="hidden sm:inline-block"><i class="fa-solid fa-gem text-rosebrown mr-2"></i>Curated Boutique Fashion</span>
+            <div class="w-full sm:w-auto text-center overflow-hidden whitespace-nowrap">
+                <span class="inline-block animate-pulse">✨ Discover the Latest Fashion Collection &nbsp;&bull;&nbsp; Explore Our New Arrivals &nbsp;&bull;&nbsp; Follow Us on Instagram for the Latest Looks</span>
+            </div>
+            <span class="hidden sm:inline-block"><a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="hover:text-rosebrown transition-colors"><i class="fa-brands fa-instagram mr-1"></i> @vernica_fashions</a></span>
+        </div>
     </div>
 
-    <!-- Heading & Message -->
-    <h1 class="text-2xl font-bold tracking-tight text-slate-900">Website Live</h1>
-    <p class="text-sm text-slate-500 mt-2 leading-relaxed">Everything all right and ready.</p>
 
-     </div>
+    <!-- =========================================================
+         SECTION 2: STICKY NAVIGATION BAR
+         PURPOSE: Primary header navigation with links and mobile menu.
+         CUSTOMIZATION: Modify navigation links or logo text.
+    ========================================================= -->
+    <header id="navbar" class="sticky top-0 z-50 bg-ivory/95 backdrop-blur-md border-b border-rosebrown/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo / Name -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-charcoal group-hover:text-rosebrown transition-colors">VERNICA FASHIONS</span>
+            </a>
 
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#home" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">Home</a>
+                <a href="#about" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">About Us</a>
+                <a href="#collections" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">Collections</a>
+                <a href="#new-arrivals" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">New Arrivals</a>
+                <a href="#styles" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">Shop by Style</a>
+                <a href="#gallery" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">Gallery</a>
+                <a href="#faq" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">FAQ</a>
+                <a href="#contact" class="text-charcoal hover:text-rosebrown transition-colors py-2 border-b-2 border-transparent hover:border-rosebrown">Contact</a>
+            </nav>
+
+            <!-- Action Buttons (Instagram & WhatsApp) -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="w-10 h-10 rounded-full bg-charcoal text-ivory flex items-center justify-center hover:bg-rosebrown transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20your%20fashion%20collections." target="_blank" rel="noopener noreferrer" class="bg-rosebrown hover:bg-charcoal text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center shadow-sm">
+                    <i class="fa-brands fa-whatsapp mr-2 text-base"></i> WhatsApp Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden text-charcoal hover:text-rosebrown p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-ivory border-b border-rosebrown/20 px-6 pt-4 pb-6 space-y-4 shadow-lg transition-all">
+            <a href="#home" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">Home</a>
+            <a href="#about" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">About Us</a>
+            <a href="#collections" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">Collections</a>
+            <a href="#new-arrivals" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">New Arrivals</a>
+            <a href="#styles" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">Shop by Style</a>
+            <a href="#gallery" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">Gallery</a>
+            <a href="#faq" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">FAQ</a>
+            <a href="#contact" class="mobile-link block text-charcoal hover:text-rosebrown font-medium text-lg py-1">Contact</a>
+            <div class="pt-4 flex items-center space-x-4 border-t border-rosebrown/10">
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-charcoal text-ivory py-3 rounded-lg text-sm font-medium"><i class="fa-brands fa-instagram mr-2"></i> Instagram</a>
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-rosebrown text-white py-3 rounded-lg text-sm font-medium"><i class="fa-brands fa-whatsapp mr-2"></i> WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         SECTION 3: HERO BANNER
+         PURPOSE: High-impact editorial fashion introduction and CTAs.
+         CUSTOMIZATION: Change headline, subheading, and hero image URL.
+    ========================================================= -->
+    <section id="home" class="relative bg-charcoal text-ivory overflow-hidden py-20 lg:py-32">
+        <!-- Background Editorial Overlay -->
+        <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+            <!-- Hero Background Image: Editorial fashion model photo. Replace src URL with authorized brand image. -->
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80" alt="Vernica Fashions Editorial Hero" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-transparent"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <div class="max-w-2xl space-y-6">
+                <!-- Small Tagline Badge -->
+                <div class="inline-flex items-center space-x-2 bg-rosebrown/30 backdrop-blur-md px-4 py-1.5 rounded-full border border-rosebrown/40 text-xs sm:text-sm uppercase tracking-widest text-ivory">
+                    <span class="w-2 h-2 rounded-full bg-rosebrown animate-ping"></span>
+                    <span>Boutique Fashion &bull; Curated Elegance</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white">
+                    Style That Speaks. <br><span class="italic font-normal text-rosebrown">Fashion</span> That Inspires.
+                </h1>
+
+                <!-- Supporting Text -->
+                <p class="text-base sm:text-lg text-ivory/80 font-light leading-relaxed max-w-xl">
+                    Explore a curated world of fashion, discover your signature style, and find looks that make every moment special. Connect with us on WhatsApp or Instagram to explore available pieces.
+                </p>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                    <a href="#collections" class="bg-rosebrown hover:bg-rosebrown/90 text-white px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase text-center transition-all shadow-lg hover:shadow-rosebrown/20 flex items-center justify-center">
+                        Explore Collections <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20explore%20your%20latest%20outfits." target="_blank" rel="noopener noreferrer" class="bg-transparent hover:bg-white/10 text-white border border-white/30 hover:border-white px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase text-center transition-all flex items-center justify-center">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg text-emerald-400"></i> Shop on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 4: ABOUT VERNICA FASHIONS
+         PURPOSE: Introduce the boutique's brand story and identity.
+         CUSTOMIZATION: Edit boutique background story and image.
+    ========================================================= -->
+    <section id="about" class="py-20 lg:py-28 bg-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- About Image Column -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <!-- About Section Image: Boutique interior or styling look. Replace src URL with your own authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Vernica Fashions Boutique Experience" class="w-full h-[450px] sm:h-[550px] object-cover hover:scale-105 transition-transform duration-700" loading="lazy">
+                    </div>
+                    <!-- Decorative Badge Box -->
+                    <div class="absolute -bottom-6 -right-6 bg-charcoal text-ivory p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs border border-rosebrown/30">
+                        <p class="font-serif italic text-lg text-rosebrown">"Discover Your Style. Define Your Elegance."</p>
+                        <span class="block mt-2 text-xs uppercase tracking-widest text-ivory/70">— Vernica Fashions</span>
+                    </div>
+                </div>
+
+                <!-- About Text Column -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-block text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">
+                        About Our Boutique
+                    </div>
+                    
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal leading-tight">
+                        A Little More About Our Style
+                    </h2>
+
+                    <p class="text-darkgrey/80 leading-relaxed font-light text-base sm:text-lg">
+                        Vernica Fashions brings fashion inspiration and carefully presented clothing collections together in one stylish destination. Explore our latest looks, discover styles that suit your personality, and connect with us to find out more about available pieces.
+                    </p>
+
+                    <p class="text-darkgrey/70 text-sm sm:text-base leading-relaxed">
+                        Every outfit we curate is selected with attention to modern trends, timeless elegance, and effortless grace. Whether you are looking for everyday sophistication or celebration-ready wear, we are here to help you shine.
+                    </p>
+
+                    <!-- Feature Highlights List -->
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal text-sm">Curated Collections</h4>
+                                <p class="text-xs text-darkgrey/70">Carefully handpicked styles</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal text-sm">Personal Touch</h4>
+                                <p class="text-xs text-darkgrey/70">Direct assistance via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="bg-charcoal hover:bg-rosebrown text-ivory px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all shadow-md flex items-center">
+                            <i class="fa-brands fa-instagram mr-2"></i> View Instagram
+                        </a>
+                        <a href="#collections" class="border border-charcoal/30 hover:border-charcoal text-charcoal px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all flex items-center">
+                            Explore Collections
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 5: FEATURED COLLECTIONS
+         PURPOSE: Showcase main clothing categories with interactive cards.
+         CUSTOMIZATION: Edit collection titles, descriptions, and images.
+    ========================================================= -->
+    <section id="collections" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">Curated Categories</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">Featured Collections</h2>
+                <p class="text-darkgrey/70 text-sm sm:text-base">Explore our signature fashion lines crafted for every occasion, mood, and style.</p>
+            </div>
+
+            <!-- Collections Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Collection Card 1 -->
+                <div class="group relative bg-ivory rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-rosebrown/10 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <!-- Featured Collection Image 1: Ethnic Wear outfit. Replace src URL with authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80" alt="Ethnic Wear Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-charcoal text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Curated</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-charcoal group-hover:text-rosebrown transition-colors">Ethnic Wear</h3>
+                            <p class="text-darkgrey/70 text-sm mt-2 leading-relaxed">Traditional elegance meets contemporary grace for festive and special celebrations.</p>
+                        </div>
+                        <div class="pt-4 border-t border-rosebrown/10 flex items-center justify-between">
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Ethnic%20Wear%20collection." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-wider text-charcoal hover:text-rosebrown flex items-center transition-colors">
+                                <i class="fa-brands fa-whatsapp text-emerald-600 mr-1.5 text-base"></i> Enquire Now
+                            </a>
+                            <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-charcoal/5 hover:bg-rosebrown hover:text-white flex items-center justify-center text-charcoal transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 2 -->
+                <div class="group relative bg-ivory rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-rosebrown/10 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <!-- Featured Collection Image 2: Western Wear outfit. Replace src URL with authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Western Wear Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-charcoal text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">New</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-charcoal group-hover:text-rosebrown transition-colors">Western Wear</h3>
+                            <p class="text-darkgrey/70 text-sm mt-2 leading-relaxed">Chic, modern styles designed for effortless everyday sophistication and outings.</p>
+                        </div>
+                        <div class="pt-4 border-t border-rosebrown/10 flex items-center justify-between">
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Western%20Wear%20collection." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-wider text-charcoal hover:text-rosebrown flex items-center transition-colors">
+                                <i class="fa-brands fa-whatsapp text-emerald-600 mr-1.5 text-base"></i> Enquire Now
+                            </a>
+                            <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-charcoal/5 hover:bg-rosebrown hover:text-white flex items-center justify-center text-charcoal transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collection Card 3 -->
+                <div class="group relative bg-ivory rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-rosebrown/10 flex flex-col">
+                    <div class="relative h-80 overflow-hidden">
+                        <!-- Featured Collection Image 3: Designer Dresses. Replace src URL with authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" alt="Dresses Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        <span class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-charcoal text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Popular</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif text-2xl font-bold text-charcoal group-hover:text-rosebrown transition-colors">Dresses & Gowns</h3>
+                            <p class="text-darkgrey/70 text-sm mt-2 leading-relaxed">Stunning silhouettes and statement pieces tailored to capture every spotlight.</p>
+                        </div>
+                        <div class="pt-4 border-t border-rosebrown/10 flex items-center justify-between">
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Dresses%20collection." target="_blank" rel="noopener noreferrer" class="text-xs font-semibold uppercase tracking-wider text-charcoal hover:text-rosebrown flex items-center transition-colors">
+                                <i class="fa-brands fa-whatsapp text-emerald-600 mr-1.5 text-base"></i> Enquire Now
+                            </a>
+                            <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-charcoal/5 hover:bg-rosebrown hover:text-white flex items-center justify-center text-charcoal transition-colors">
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 6: NEW ARRIVALS
+         PURPOSE: Product showcase featuring newly added boutique items.
+         CUSTOMIZATION: Edit product names, placeholder prices, and images.
+    ========================================================= -->
+    <section id="new-arrivals" class="py-20 lg:py-28 bg-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div class="space-y-4">
+                    <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">Just Landed</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">New Arrivals</h2>
+                    <p class="text-darkgrey/70 text-sm sm:text-base max-w-lg">Discover our latest additions inspired by contemporary trends and boutique elegance.</p>
+                </div>
+                <div class="mt-6 md:mt-0">
+                    <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold uppercase tracking-widest bg-charcoal text-ivory px-6 py-3 rounded-full hover:bg-rosebrown transition-colors">
+                        View More on Instagram <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-rosebrown/10 flex flex-col group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <!-- Product Image 1: Elegant floral dress. Replace src URL with your authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fb1b?auto=format&fit=crop&w=700&q=80" alt="Floral Elegance Dress" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-3 left-3 bg-rosebrown text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md">New</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <div class="text-xs text-darkgrey/60 uppercase tracking-widest">Dresses</div>
+                            <h3 class="font-serif font-bold text-lg text-charcoal mt-1">Floral Elegance Maxi</h3>
+                            <p class="text-rosebrown font-semibold text-base mt-1">₹ 2,499 <span class="text-xs text-darkgrey/50 font-normal">(Placeholder)</span></p>
+                        </div>
+                        <div class="space-y-3 pt-3 border-t border-gray-100">
+                            <div class="flex items-center justify-between text-xs text-darkgrey/70">
+                                <span>Sizes: S, M, L</span>
+                                <span>Colors: Pastel</span>
+                            </div>
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Floral%20Elegance%20Maxi%20(₹2,499)." target="_blank" rel="noopener noreferrer" class="w-full bg-charcoal hover:bg-rosebrown text-ivory py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-center transition-colors flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-base text-emerald-400"></i> Enquire on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-rosebrown/10 flex flex-col group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <!-- Product Image 2: Chic Kurti set. Replace src URL with your authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=700&q=80" alt="Royal Ethnic Kurti Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-3 left-3 bg-rosebrown text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md">Trending</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <div class="text-xs text-darkgrey/60 uppercase tracking-widest">Ethnic Wear</div>
+                            <h3 class="font-serif font-bold text-lg text-charcoal mt-1">Royal Embroidered Kurti</h3>
+                            <p class="text-rosebrown font-semibold text-base mt-1">₹ 1,899 <span class="text-xs text-darkgrey/50 font-normal">(Placeholder)</span></p>
+                        </div>
+                        <div class="space-y-3 pt-3 border-t border-gray-100">
+                            <div class="flex items-center justify-between text-xs text-darkgrey/70">
+                                <span>Sizes: M, L, XL</span>
+                                <span>Colors: Ivory/Rose</span>
+                            </div>
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Royal%20Embroidered%20Kurti%20(₹1,899)." target="_blank" rel="noopener noreferrer" class="w-full bg-charcoal hover:bg-rosebrown text-ivory py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-center transition-colors flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-base text-emerald-400"></i> Enquire on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-rosebrown/10 flex flex-col group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <!-- Product Image 3: Contemporary blazer set. Replace src URL with your authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Modern Blazer Chic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-3 left-3 bg-rosebrown text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md">New</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <div class="text-xs text-darkgrey/60 uppercase tracking-widest">Western Wear</div>
+                            <h3 class="font-serif font-bold text-lg text-charcoal mt-1">Contemporary Blazer Set</h3>
+                            <p class="text-rosebrown font-semibold text-base mt-1">₹ 3,299 <span class="text-xs text-darkgrey/50 font-normal">(Placeholder)</span></p>
+                        </div>
+                        <div class="space-y-3 pt-3 border-t border-gray-100">
+                            <div class="flex items-center justify-between text-xs text-darkgrey/70">
+                                <span>Sizes: S, M</span>
+                                <span>Colors: Charcoal</span>
+                            </div>
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Contemporary%20Blazer%20Set%20(₹3,299)." target="_blank" rel="noopener noreferrer" class="w-full bg-charcoal hover:bg-rosebrown text-ivory py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-center transition-colors flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-base text-emerald-400"></i> Enquire on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-rosebrown/10 flex flex-col group">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <!-- Product Image 4: Festive celebration suit. Replace src URL with your authorized photograph. -->
+                        <img src="https://images.unsplash.com/photo-1550639525-c97d455acf70?auto=format&fit=crop&w=700&q=80" alt="Festive Glow Ensemble" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <span class="absolute top-3 left-3 bg-rosebrown text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md">Festive</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <div class="text-xs text-darkgrey/60 uppercase tracking-widest">Festive Wear</div>
+                            <h3 class="font-serif font-bold text-lg text-charcoal mt-1">Festive Glow Ensemble</h3>
+                            <p class="text-rosebrown font-semibold text-base mt-1">₹ 4,199 <span class="text-xs text-darkgrey/50 font-normal">(Placeholder)</span></p>
+                        </div>
+                        <div class="space-y-3 pt-3 border-t border-gray-100">
+                            <div class="flex items-center justify-between text-xs text-darkgrey/70">
+                                <span>Sizes: M, L, XL</span>
+                                <span>Colors: Warm Ivory</span>
+                            </div>
+                            <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20the%20Festive%20Glow%20Ensemble%20(₹4,199)." target="_blank" rel="noopener noreferrer" class="w-full bg-charcoal hover:bg-rosebrown text-ivory py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-center transition-colors flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-1.5 text-base text-emerald-400"></i> Enquire on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 7: SHOP BY STYLE
+         PURPOSE: Help visitors discover fashion based on lifestyle/mood.
+         CUSTOMIZATION: Adjust style categories and images.
+    ========================================================= -->
+    <section id="styles" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">Style Guide</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">Shop by Style</h2>
+                <p class="text-darkgrey/70 text-sm sm:text-base">Find looks tailored to your unique lifestyle and occasions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Style 1 -->
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20am%20interested%20in%20Everyday%20Elegance%20styles." target="_blank" rel="noopener noreferrer" class="group relative h-96 rounded-2xl overflow-hidden shadow-lg block">
+                    <!-- Style Image 1: Everyday Elegance. Replace src URL with your authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="Everyday Elegance" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-xs uppercase tracking-widest text-rosebrown font-semibold">Comfort & Class</span>
+                        <h3 class="font-serif text-2xl font-bold mt-1">Everyday Elegance</h3>
+                        <p class="text-xs text-ivory/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Effortless daily wear designed for grace and comfort.</p>
+                    </div>
+                </a>
+
+                <!-- Style 2 -->
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20am%20interested%20in%20Party%20Wear%20styles." target="_blank" rel="noopener noreferrer" class="group relative h-96 rounded-2xl overflow-hidden shadow-lg block">
+                    <!-- Style Image 2: Party Wear. Replace src URL with your authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80" alt="Party Wear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-xs uppercase tracking-widest text-rosebrown font-semibold">Evening Glamour</span>
+                        <h3 class="font-serif text-2xl font-bold mt-1">Party Wear</h3>
+                        <p class="text-xs text-ivory/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Make an entrance with captivating evening statements.</p>
+                    </div>
+                </a>
+
+                <!-- Style 3 -->
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20am%20interested%20in%20Festive%20Looks%20styles." target="_blank" rel="noopener noreferrer" class="group relative h-96 rounded-2xl overflow-hidden shadow-lg block">
+                    <!-- Style Image 3: Festive Looks. Replace src URL with your authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=700&q=80" alt="Festive Looks" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-xs uppercase tracking-widest text-rosebrown font-semibold">Celebration Ready</span>
+                        <h3 class="font-serif text-2xl font-bold mt-1">Festive Looks</h3>
+                        <p class="text-xs text-ivory/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Rich details and traditional vibrance for special occasions.</p>
+                    </div>
+                </a>
+
+                <!-- Style 4 -->
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20am%20interested%20in%20Contemporary%20Fashion%20styles." target="_blank" rel="noopener noreferrer" class="group relative h-96 rounded-2xl overflow-hidden shadow-lg block">
+                    <!-- Style Image 4: Contemporary Fashion. Replace src URL with your authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80" alt="Contemporary Fashion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-xs uppercase tracking-widest text-rosebrown font-semibold">Modern Edge</span>
+                        <h3 class="font-serif text-2xl font-bold mt-1">Contemporary Fashion</h3>
+                        <p class="text-xs text-ivory/80 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Bold cuts and modern silhouettes for the trendsetter.</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 8: WHY CHOOSE VERNICA FASHIONS?
+         PURPOSE: Highlights brand strengths and customer commitment.
+         CUSTOMIZATION: Edit features and icons as needed.
+    ========================================================= -->
+    <section class="py-20 lg:py-28 bg-charcoal text-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/20 px-3 py-1 rounded-full">Our Promise</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Why Choose Vernica Fashions?</h2>
+                <p class="text-ivory/70 text-sm sm:text-base">Dedicated to bringing you style, quality, and a seamless boutique experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm space-y-4 hover:border-rosebrown transition-colors">
+                    <div class="w-14 h-14 rounded-2xl bg-rosebrown/20 text-rosebrown flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Carefully Curated Styles</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">Every collection is thoughtfully handpicked to ensure distinctive style, elegance, and charm.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm space-y-4 hover:border-rosebrown transition-colors">
+                    <div class="w-14 h-14 rounded-2xl bg-rosebrown/20 text-rosebrown flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Fashion for Every Occasion</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">From casual daytime chic to glamorous festive celebrations, find outfits for every moment.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm space-y-4 hover:border-rosebrown transition-colors">
+                    <div class="w-14 h-14 rounded-2xl bg-rosebrown/20 text-rosebrown flex items-center justify-center text-2xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Easy WhatsApp Enquiries</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">Connect directly with our boutique team for personalized size, price, and availability assistance.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm space-y-4 hover:border-rosebrown transition-colors">
+                    <div class="w-14 h-14 rounded-2xl bg-rosebrown/20 text-rosebrown flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Direct Boutique Connection</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">Enjoy personalized styling recommendations and responsive customer care.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm space-y-4 hover:border-rosebrown transition-colors">
+                    <div class="w-14 h-14 rounded-2xl bg-rosebrown/20 text-rosebrown flex items-center justify-center text-2xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Latest Updates on Instagram</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">Follow our active Instagram handle for daily lookbooks, reels, and fresh arrivals.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm space-y-4 hover:border-rosebrown transition-colors">
+                    <div class="w-14 h-14 rounded-2xl bg-rosebrown/20 text-rosebrown flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white">Trusted Quality</h3>
+                    <p class="text-ivory/70 text-sm leading-relaxed">Committed to premium presentation and fashion that makes you look and feel extraordinary.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 9: FASHION GALLERY
+         PURPOSE: Instagram-inspired visual gallery with direct links.
+         CUSTOMIZATION: Update gallery grid images and Instagram link.
+    ========================================================= -->
+    <section id="gallery" class="py-20 lg:py-28 bg-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full"><i class="fa-brands fa-instagram mr-1"></i> @vernica_fashions</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">Follow the Style. Find Your Inspiration.</h2>
+                <p class="text-darkgrey/70 text-sm sm:text-base">Explore our Instagram for more fashion inspiration and collection updates.</p>
+            </div>
+
+            <!-- Gallery Grid (6 Items) -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                
+                <!-- Gallery Item 1 -->
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md block">
+                    <!-- Gallery Image 1: Fashion outfit showcase. Replace src URL with authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Instagram Gallery Outfit 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram text-3xl"></i>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 2 -->
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md block">
+                    <!-- Gallery Image 2: Fashion outfit showcase. Replace src URL with authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Instagram Gallery Outfit 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram text-3xl"></i>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 3 -->
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md block">
+                    <!-- Gallery Image 3: Fashion outfit showcase. Replace src URL with authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Instagram Gallery Outfit 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram text-3xl"></i>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 4 -->
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md block">
+                    <!-- Gallery Image 4: Fashion outfit showcase. Replace src URL with authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="Instagram Gallery Outfit 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram text-3xl"></i>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 5 -->
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md block">
+                    <!-- Gallery Image 5: Fashion outfit showcase. Replace src URL with authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1550639525-c97d455acf70?auto=format&fit=crop&w=600&q=80" alt="Instagram Gallery Outfit 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram text-3xl"></i>
+                    </div>
+                </a>
+
+                <!-- Gallery Item 6 -->
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="group relative h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md block">
+                    <!-- Gallery Image 6: Fashion outfit showcase. Replace src URL with authorized photograph. -->
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Instagram Gallery Outfit 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <i class="fa-brands fa-instagram text-3xl"></i>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Follow Button -->
+            <div class="text-center mt-12">
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-charcoal hover:bg-rosebrown text-ivory px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest transition-all shadow-lg">
+                    <i class="fa-brands fa-instagram mr-2 text-lg"></i> Follow @vernica_fashions
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 10: HOW TO ORDER
+         PURPOSE: Simple 3-step guide explaining WhatsApp ordering process.
+         CUSTOMIZATION: Modify step descriptions as required.
+    ========================================================= -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">Simple Process</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">How to Order</h2>
+                <p class="text-darkgrey/70 text-sm sm:text-base">Connecting with us to secure your favourite styles is quick and easy.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="bg-ivory p-8 rounded-2xl border border-rosebrown/10 text-center space-y-4 relative">
+                    <div class="w-12 h-12 rounded-full bg-rosebrown text-white font-serif font-bold text-xl flex items-center justify-center mx-auto shadow-md">
+                        1
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Explore</h3>
+                    <p class="text-darkgrey/70 text-sm leading-relaxed">
+                        Browse our featured collections or discover the latest looks on our Instagram profile.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-ivory p-8 rounded-2xl border border-rosebrown/10 text-center space-y-4 relative">
+                    <div class="w-12 h-12 rounded-full bg-rosebrown text-white font-serif font-bold text-xl flex items-center justify-center mx-auto shadow-md">
+                        2
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Enquire</h3>
+                    <p class="text-darkgrey/70 text-sm leading-relaxed">
+                        Contact Vernica Fashions on WhatsApp to ask about the item, size, color, price, and availability.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-ivory p-8 rounded-2xl border border-rosebrown/10 text-center space-y-4 relative">
+                    <div class="w-12 h-12 rounded-full bg-rosebrown text-white font-serif font-bold text-xl flex items-center justify-center mx-auto shadow-md">
+                        3
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Confirm Your Order</h3>
+                    <p class="text-darkgrey/70 text-sm leading-relaxed">
+                        Confirm product details, delivery arrangements, and final order directly with our boutique team.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- WhatsApp Action Banner -->
+            <div class="mt-16 bg-charcoal text-ivory rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto space-y-6 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-rosebrown text-9k">
+                    <i class="fa-brands fa-whatsapp text-9xl"></i>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-4xl font-bold">Ready to Find Your Next Outfit?</h3>
+                <p class="text-ivory/80 text-sm sm:text-base max-w-xl mx-auto font-light">
+                    Click below to start a chat with Vernica Fashions on WhatsApp for instant assistance.
+                </p>
+                <div class="pt-2">
+                    <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20your%20fashion%20collection." target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-rosebrown hover:bg-rosebrown/90 text-white px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest transition-all shadow-lg">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg text-emerald-300"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 11: FASHION INSPIRATION / EDITORIAL HIGHLIGHT
+         PURPOSE: Displays brand mood and stylistic inspiration.
+         CUSTOMIZATION: Edit inspirational quote and background image.
+    ========================================================= -->
+    <section class="py-20 relative bg-charcoal text-ivory overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <!-- Inspiration Section Image: Fashion editorial background. Replace src URL with authorized image. -->
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80" alt="Fashion Inspiration Background" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-5xl mx-auto px-4 text-center space-y-6 z-10">
+            <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/20 px-3 py-1 rounded-full">Style Editorial</span>
+            <blockquote class="font-serif text-2xl sm:text-4xl lg:text-5xl font-medium leading-relaxed italic text-white">
+                "Fashion is not about labels. It is about discovering what makes you feel confident, radiant, and unmistakably yourself."
+            </blockquote>
+            <p class="text-rosebrown uppercase tracking-widest text-xs font-semibold pt-2">— Vernica Fashions Philosophy</p>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 12: FREQUENTLY ASKED QUESTIONS (FAQ)
+         PURPOSE: Accordion answering common customer inquiries.
+         CUSTOMIZATION: Edit questions and answers in the accordion items below.
+    ========================================================= -->
+    <section id="faq" class="py-20 lg:py-28 bg-ivory">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">Got Questions?</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">Frequently Asked Questions</h2>
+                <p class="text-darkgrey/70 text-sm sm:text-base">Find quick answers about our collections, enquiries, and ordering process.</p>
+            </div>
+
+            <!-- FAQ Accordion Container -->
+            <div class="space-y-4" id="faq-container">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-rosebrown/10 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-rosebrown/5">
+                        <span class="font-serif font-bold text-lg text-charcoal">1. How can I explore the latest collection?</span>
+                        <i class="fa-solid fa-chevron-down text-rosebrown transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-darkgrey/70 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                        You can explore our latest collections directly on this website under the Collections and New Arrivals sections, or visit our official Instagram profile <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="text-rosebrown underline">@vernica_fashions</a> for daily styling updates.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-rosebrown/10 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-rosebrown/5">
+                        <span class="font-serif font-bold text-lg text-charcoal">2. How can I enquire about product prices?</span>
+                        <i class="fa-solid fa-chevron-down text-rosebrown transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-darkgrey/70 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                        Click the "Enquire on WhatsApp" button on any product card or use our WhatsApp buttons across the site. This will automatically open a pre-filled chat with our team where you can ask for exact pricing and details.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-rosebrown/10 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-rosebrown/5">
+                        <span class="font-serif font-bold text-lg text-charcoal">3. How can I check available sizes and colors?</span>
+                        <i class="fa-solid fa-chevron-down text-rosebrown transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-darkgrey/70 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                        Size and color availability can vary by collection item. Simply drop us a quick message on WhatsApp mentioning the specific outfit you love, and our boutique staff will share all available variants.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-2xl border border-rosebrown/10 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-rosebrown/5">
+                        <span class="font-serif font-bold text-lg text-charcoal">4. How do I place an order?</span>
+                        <i class="fa-solid fa-chevron-down text-rosebrown transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-darkgrey/70 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                        Orders are coordinated personally through WhatsApp. Once you confirm your preferred product, size, and delivery address with our team, we will guide you through the final confirmation and payment arrangements.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-2xl border border-rosebrown/10 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-rosebrown/5">
+                        <span class="font-serif font-bold text-lg text-charcoal">5. How can I contact Vernica Fashions?</span>
+                        <i class="fa-solid fa-chevron-down text-rosebrown transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-darkgrey/70 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                        You can contact us via our WhatsApp number, email, or through our Instagram profile <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="text-rosebrown underline">@vernica_fashions</a>. You can also use the contact form at the bottom of this page.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-white rounded-2xl border border-rosebrown/10 overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:bg-rosebrown/5">
+                        <span class="font-serif font-bold text-lg text-charcoal">6. What are the delivery and return policies?</span>
+                        <i class="fa-solid fa-chevron-down text-rosebrown transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6 text-darkgrey/70 text-sm leading-relaxed border-t border-gray-100 pt-4">
+                        Delivery times and exchange guidelines are discussed directly during your WhatsApp order confirmation. Please feel free to ask our team about specific shipping arrangements for your location when placing an enquiry.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 13: INSTAGRAM CALL TO ACTION
+         PURPOSE: Full-width banner encouraging Instagram visits and chats.
+         CUSTOMIZATION: Edit promotional text and button URLs.
+    ========================================================= -->
+    <section class="py-20 bg-charcoal text-ivory relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <!-- CTA Section Background Image: Fashion models in boutique. Replace src URL with authorized photograph. -->
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80" alt="Instagram Call to Action Background" class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-5xl mx-auto px-4 text-center space-y-6 z-10">
+            <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/20 px-3 py-1 rounded-full">Stay Connected</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Your Next Favourite Look Is Waiting.</h2>
+            <p class="text-ivory/80 text-sm sm:text-base max-w-xl mx-auto font-light">
+                Explore our Instagram for the latest fashion inspiration and connect with Vernica Fashions to enquire about your favourite styles.
+            </p>
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="bg-rosebrown hover:bg-rosebrown/90 text-white px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest transition-all shadow-lg flex items-center">
+                    <i class="fa-brands fa-instagram mr-2 text-lg"></i> Explore Instagram
+                </a>
+                <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20visited%20your%20website%20and%20want%20to%20chat." target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-full font-semibold text-xs uppercase tracking-widest transition-all flex items-center">
+                    <i class="fa-brands fa-whatsapp mr-2 text-lg text-emerald-400"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 14: CONTACT SECTION & WHATSAPP FORM
+         PURPOSE: Professional contact info and interactive form that sends messages via WhatsApp.
+         CUSTOMIZATION: Update business phone, email, address, and hours placeholders.
+    ========================================================= -->
+    <section id="contact" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-rosebrown font-semibold text-xs uppercase tracking-widest bg-rosebrown/10 px-3 py-1 rounded-full">Get In Touch</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">Contact Vernica Fashions</h2>
+                <p class="text-darkgrey/70 text-sm sm:text-base">We would love to hear from you. Reach out via WhatsApp, phone, email, or visit us.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Details Card -->
+                <div class="lg:col-span-5 bg-ivory p-8 sm:p-10 rounded-3xl border border-rosebrown/10 space-y-8">
+                    <h3 class="font-serif text-2xl font-bold text-charcoal">Boutique Information</h3>
+                    
+                    <div class="space-y-6 text-sm">
+                        <!-- Address -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Address</h4>
+                                <p class="text-darkgrey/70 mt-0.5">[Add Boutique Address / City, State]</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Phone Number</h4>
+                                <p class="text-darkgrey/70 mt-0.5">[Add Business Phone Number]</p>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">WhatsApp Enquiries</h4>
+                                <p class="text-darkgrey/70 mt-0.5">[Add WhatsApp Number with Country Code]</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Email Address</h4>
+                                <p class="text-darkgrey/70 mt-0.5">[Add Business Email]</p>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-rosebrown/20 text-rosebrown flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Working Hours</h4>
+                                <p class="text-darkgrey/70 mt-0.5">[Add Business Hours e.g., Mon - Sat: 10:00 AM - 8:00 PM]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Link -->
+                    <div class="pt-4 border-t border-rosebrown/20 flex items-center space-x-4">
+                        <span class="text-xs uppercase tracking-widest text-charcoal font-semibold">Follow Us:</span>
+                        <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-charcoal text-white flex items-center justify-center hover:bg-rosebrown transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form (WhatsApp Redirect) -->
+                <div class="lg:col-span-7 bg-ivory p-8 sm:p-10 rounded-3xl border border-rosebrown/10">
+                    <h3 class="font-serif text-2xl font-bold text-charcoal mb-2">Send an Enquiry via WhatsApp</h3>
+                    <p class="text-darkgrey/70 text-sm mb-8">Fill out the form below. Submitting will instantly open WhatsApp with your message pre-filled for our team.</p>
+
+                    <!-- Interactive Contact Form -->
+                    <form id="whatsapp-contact-form" class="space-y-6">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Name Field -->
+                            <div class="space-y-2">
+                                <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal">Your Name <span class="text-rosebrown">*</span></label>
+                                <input type="text" id="contact-name" name="name" required placeholder="Enter your full name" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-rosebrown transition-colors">
+                            </div>
+
+                            <!-- Phone Field -->
+                            <div class="space-y-2">
+                                <label for="contact-phone" class="block text-xs font-semibold uppercase tracking-wider text-charcoal">Phone Number <span class="text-rosebrown">*</span></label>
+                                <input type="tel" id="contact-phone" name="phone" required placeholder="Enter your phone number" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-rosebrown transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Product/Collection of Interest -->
+                        <div class="space-y-2">
+                            <label for="contact-product" class="block text-xs font-semibold uppercase tracking-wider text-charcoal">Product or Collection of Interest</label>
+                            <select id="contact-product" name="product" class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-rosebrown transition-colors">
+                                <option value="General Fashion Enquiry">General Fashion Enquiry</option>
+                                <option value="Ethnic Wear Collection">Ethnic Wear Collection</option>
+                                <option value="Western Wear Collection">Western Wear Collection</option>
+                                <option value="Dresses & Gowns Collection">Dresses & Gowns Collection</option>
+                                <option value="New Arrival Item">New Arrival Item</option>
+                            </select>
+                        </div>
+
+                        <!-- Message Field -->
+                        <div class="space-y-2">
+                            <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-charcoal">Your Message <span class="text-rosebrown">*</span></label>
+                            <textarea id="contact-message" name="message" rows="4" required placeholder="Mention your size, color preferences, or any specific questions..." class="w-full bg-white border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-rosebrown transition-colors"></textarea>
+                        </div>
+
+                        <!-- Error Notification Box -->
+                        <div id="form-error" class="hidden text-red-600 text-xs font-medium"></div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full bg-rosebrown hover:bg-charcoal text-white py-4 rounded-xl font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp mr-2 text-lg text-emerald-300"></i> Send Message on WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================
+         SECTION 15: FOOTER
+         PURPOSE: Professional footer with brand info, quick links, and dynamic copyright.
+         CUSTOMIZATION: Edit footer copyright and policy links.
+    ========================================================= -->
+    <footer class="bg-charcoal text-ivory pt-16 pb-12 border-t border-rosebrown/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <span class="font-serif text-2xl font-bold tracking-wider text-white">VERNICA FASHIONS</span>
+                    <p class="text-ivory/70 text-sm leading-relaxed">
+                        A fashion-focused boutique website designed to showcase stylish clothing, curated collections, and fashionable looks.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="https://www.instagram.com/vernica_fashions/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-rosebrown flex items-center justify-center text-white transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-rosebrown flex items-center justify-center text-white transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Links -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-lg font-bold text-white">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-ivory/70">
+                        <li><a href="#home" class="hover:text-rosebrown transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-rosebrown transition-colors">About Us</a></li>
+                        <li><a href="#collections" class="hover:text-rosebrown transition-colors">Collections</a></li>
+                        <li><a href="#new-arrivals" class="hover:text-rosebrown transition-colors">New Arrivals</a></li>
+                        <li><a href="#gallery" class="hover:text-rosebrown transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <!-- Collections Links -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-lg font-bold text-white">Fashion Categories</h4>
+                    <ul class="space-y-2.5 text-sm text-ivory/70">
+                        <li><a href="#collections" class="hover:text-rosebrown transition-colors">Ethnic Wear</a></li>
+                        <li><a href="#collections" class="hover:text-rosebrown transition-colors">Western Wear</a></li>
+                        <li><a href="#collections" class="hover:text-rosebrown transition-colors">Dresses & Gowns</a></li>
+                        <li><a href="#styles" class="hover:text-rosebrown transition-colors">Shop by Style</a></li>
+                        <li><a href="#faq" class="hover:text-rosebrown transition-colors">FAQ & Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-lg font-bold text-white">Legal & Policies</h4>
+                    <ul class="space-y-2.5 text-sm text-ivory/70">
+                        <li><a href="#" class="hover:text-rosebrown transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-rosebrown transition-colors">Terms and Conditions</a></li>
+                        <li><a href="#" class="hover:text-rosebrown transition-colors">Shipping and Returns</a></li>
+                        <li><a href="#contact" class="hover:text-rosebrown transition-colors">Contact Boutique</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright Notice -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory/60">
+                <p>&copy; <span id="current-year"></span> Vernica Fashions. All rights reserved.</p>
+                <p class="mt-4 sm:mt-0 font-light tracking-wide">Designed for Contemporary Elegance</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- =========================================================
+         FLOATING WHATSAPP BUTTON
+         PURPOSE: Fixed floating button allowing visitors to chat instantly.
+    ========================================================= -->
+    <a href="https://wa.me/919876543210?text=Hello%20Vernica%20Fashions,%20I%20would%20like%20to%20enquire%20about%20your%20fashion%20collections." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- =========================================================
+         VANILLA JAVASCRIPT INTERACTIONS & LOGIC
+         PURPOSE: Powers mobile menu toggle, FAQ accordion, contact form validation,
+         WhatsApp URL encoder, dynamic copyright year, and scroll effects.
+    ========================================================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // 1. Mobile Menu Toggle Function
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when any mobile link is clicked
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+
+            // 2. FAQ Accordion Function
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('fa-chevron-down, i');
+                    
+                    // Toggle current content
+                    content.classList.toggle('hidden');
+                    if(icon) {
+                        icon.classList.toggle('rotate-180');
+                    }
+
+                    // Optional: Close other open accordion items
+                    faqToggles.forEach(otherToggle => {
+                        if (otherToggle !== this) {
+                            otherToggle.nextElementSibling.classList.add('hidden');
+                            const otherIcon = otherToggle.querySelector('i');
+                            if(otherIcon) {
+                                otherIcon.classList.remove('rotate-180');
+                            }
+                        }
+                    });
+                });
+            });
+
+            // 3. Dynamic Copyright Year Function
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // 4. Navigation Sticky Scroll Shadow Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 30) {
+                    navbar.classList.add('shadow-md');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+            });
+
+            // 5. WhatsApp Contact Form Submission Function
+            const contactForm = document.getElementById('whatsapp-contact-form');
+            const formError = document.getElementById('form-error');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contact-name').value.trim();
+                    const phone = document.getElementById('contact-phone').value.trim();
+                    const product = document.getElementById('contact-product').value;
+                    const message = document.getElementById('contact-message').value.trim();
+
+                    // Simple Validation
+                    if (!name || !phone || !message) {
+                        if (formError) {
+                            formError.textContent = "Please fill in all required fields (Name, Phone, Message).";
+                            formError.classList.remove('hidden');
+                        }
+                        return;
+                    }
+
+                    if (formError) {
+                        formError.classList.add('hidden');
+                    }
+
+                    // Construct WhatsApp Pre-filled Message
+                    const whatsappNumber = window.VERBICA_CONFIG ? window.VERBICA_CONFIG.whatsappNumber : "919876543210";
+                    const encodedText = encodeURIComponent(
+                        `Hello Vernica Fashions! I would like to enquire about your fashion collection.\n\n` +
+                        `Name: ${name}\n` +
+                        `Phone: ${phone}\n` +
+                        `Product/Collection: ${product}\n` +
+                        `Message: ${message}\n\n` +
+                        `Please share the price, availability, and ordering details.`
+                    );
+
+                    // Open WhatsApp Click-to-Chat URL
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+
+        });
+    </script>
 </body>
 </html>
